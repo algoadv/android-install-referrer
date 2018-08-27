@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-android-install-referrer" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Android Install Referrer</name>
+    <platform name="android">
+        <js-module name="android-install-referrer" src="www/android-install-referrer.js">
+            <merges target="plugins.android.installreferrer" />
+        </js-module>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <receiver android:name="com.algoadtech.installreferrer.ReferrerReceiver" android:exported="true">
+                <intent-filter>
+                    <action android:name="com.android.vending.INSTALL_REFERRER" />
+                </intent-filter>
+            </receiver>
+        </config-file>
+        
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AndroidInstallReferrer">
+                <param name="android-package" value="com.algoadtech.installreferrer.AndroidInstallReferrer" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/AndroidInstallReferrer.java" target-dir="src/com/algoadtech/installreferrer" />
+        <source-file src="src/android/ReferrerReceiver.java" target-dir="src/com/algoadtech/installreferrer" />
+    </platform>
+</plugin>
