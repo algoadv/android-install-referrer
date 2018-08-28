@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="cordova-plugin-android-install-referrer" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="cordova-plugin-install-referrer-android" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>Android Install Referrer</name>
     <platform name="android">
-        <js-module name="android-install-referrer" src="www/android-install-referrer.js">
+        <js-module name="install-referrer-android" src="www/install-referrer-android.js">
             <merges target="plugins.android.installreferrer" />
         </js-module>
         

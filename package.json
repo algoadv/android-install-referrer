@@ -1,5 +1,5 @@
 {
-  "name": "android-install-referrer",
+  "name": "install-referrer-android",
   "version": "1.0.0",
   "description": "Simple plugin that retrieves Android's INSTALL_REFERRER sent from the Playstore",
   "keywords": [
@@ -18,7 +18,7 @@
   "author": "AlgoAdtech Ltd",
   "license": "MIT",
   "cordova": {
-    "id": "cordova-plugin-android-install-referrer",
+    "id": "cordova-plugin-install-referrer-android",
     "platforms": [
       "android",
       "ios"
@@ -29,6 +29,6 @@
   "directories": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/algoadv/android-install-referrer.git"
+    "url": "git+https://github.com/algoadv/cordova-plugin-install-referrer-android.git"
   }
 }
