@@ -1,6 +1,6 @@
 {
   "name": "install-referrer-android",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple plugin that retrieves Android's INSTALL_REFERRER sent from the Playstore",
   "keywords": [
     "android",
