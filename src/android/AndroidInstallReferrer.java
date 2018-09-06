@@ -65,9 +65,13 @@ public class AndroidInstallReferrer extends CordovaPlugin {
         }
         else { // this referrer has been checked on Google Play for this app
             Log.v(TAG, "Retrieving referrer from cache");
-            String preferencesKey = action == "get" ? KEY_REFERRER : KEY_REFERRER_DATA;
+            String preferencesKey = action.equals("get") ? KEY_REFERRER : KEY_REFERRER_DATA;
             String result = sharedPrefs.getString(preferencesKey, "");
+            
+            Log.v(TAG, "Requested Action: " + action );
+            Log.v(TAG, "Preferences Key: " + preferencesKey );
             Log.v(TAG, "Referer value: " + result );
+            
             callbackContext.sendPluginResult(new PluginResult(status, result));
         }
 
