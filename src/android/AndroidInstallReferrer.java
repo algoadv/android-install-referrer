@@ -121,18 +121,18 @@ public class AndroidInstallReferrer extends CordovaPlugin {
 
                         } catch (RemoteException e) {
                             Log.e(TAG, "Connection failed during Google Play details retrieval: \n" + e.toString());
-                            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, GENERIC_ERROR));
+                            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, GENERIC_ERROR + " " + e.getMessage()));
                         }
                         break;
                     case InstallReferrerResponse.FEATURE_NOT_SUPPORTED:
                         // API not available on the current Play Store app
                         Log.e(TAG, "Google Play Client Not Supported - Update is needed");
-                        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, GENERIC_ERROR));
+                        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, GENERIC_ERROR + " update is required"));
                         break;
                     case InstallReferrerResponse.SERVICE_UNAVAILABLE:
                         // Connection could not be established
                         Log.e(TAG, "Google Play Client Service Unavailable");
-                        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, GENERIC_ERROR));
+                        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, GENERIC_ERROR + " service is unavailable"));
                         break;
                 }
                 // disconnect the client
